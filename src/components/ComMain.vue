@@ -1,12 +1,12 @@
 <script >
 
 import ComCard from './ComCard.vue'
-
+// importo dell file con dentro array di oggetti 
 import { store } from '../store';
 
 export default {
     componente: "ComMain",
-
+// componente cardiesima
     components: {
         ComCard
     },
@@ -26,6 +26,7 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <!-- selezione rarità  -->
                     <select name="" id="" class="m-2">
                         <option value="alien">alien</option>
                     </select>
@@ -34,6 +35,7 @@ export default {
                         <div class="quantitacard p-2">
                             found {{ store.ArrayCards.length }}
                         </div>
+                        <!-- lista di oggetti dentro all'array  -->
                         <ul class="d-flex p-0">
                             <li v-for="(card, i) in store.ArrayCards " class="mb-4 pb-4">
                                 <ComCard :item="card" />
@@ -48,7 +50,7 @@ export default {
 <style scoped lang="scss">
 section {
     background-color: #d48f38;
-
+// caratteristiche selezione 
     select{
         width: 100px;
         border-radius: 4px;
@@ -58,7 +60,7 @@ section {
         background-color: black;
         color: white;
     }
-
+// caratteristiche dentro alla lista con dentro le card 
     ul {
         flex-wrap: wrap;
         justify-content: space-between;
