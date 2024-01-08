@@ -5,7 +5,7 @@ import ComMain from './components/ComMain.vue'
 
 import { store } from './store';
 
-import { Axios } from 'axios';
+import  Axios  from 'axios';
 
 export default {
   components: {
@@ -13,10 +13,23 @@ export default {
     ComMain
   },
 
-  data(){
-    return{
+  data() {
+    return {
       store
     }
+  },
+  methods: {
+    RichiestaApi() {
+      Axios.get(store.richiestaApi)
+        .then((risposta => {
+          store.ArrayCards = risposta.data.data
+          console.log(risposta.data.data);
+          console.log(risposta.data.data[1].card_images);
+        }))
+    }
+  },
+  created() {
+    this.RichiestaApi()
   }
 }
 </script>

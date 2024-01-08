@@ -1,18 +1,31 @@
 <script >
 
 
-export default{
-  componente:"ComCard"
+export default {
+    componente: "ComCard",
+
+    props: {
+        item: Object
+    }
 }
 
 </script>
 
 <template>
-  ciao
+    <div v-for="CardIesima in item.card_images" class="text-center">
+
+        <img :src="CardIesima.image_url" :alt="CardIesima.id">
+        <h5 class="text-white">
+            {{ item.name }}
+        </h5>
+        {{ item.archetype }}
+        {{ item.attribute }}
+        {{ item.race }}
+    </div>
 </template>
 
 <style scoped lang="scss">
-.read-the-docs {
-  color: #888;
+img {
+    width: 100%;
 }
 </style>
