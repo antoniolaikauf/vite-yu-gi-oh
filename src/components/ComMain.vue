@@ -2,8 +2,7 @@
 
 import ComCard from './ComCard.vue'
 
-import { store } from './store';
-
+import { store } from '../store';
 export default {
     componente: "ComMain",
 
