@@ -35,7 +35,7 @@ export default {
                             found 20 card
                         </div>
                         <ul class="d-flex p-0">
-                            <li v-for="(card, i) in store.ArrayCards " class="mb-4">
+                            <li v-for="(card, i) in store.ArrayCards " class="mb-4 pb-4">
                                 <ComCard :item="card" />
                             </li>
                         </ul>
@@ -49,6 +49,11 @@ export default {
 section {
     background-color: #d48f38;
 
+    select{
+        width: 100px;
+        border-radius: 4px;
+    }
+
     .quantitacard {
         background-color: black;
         color: white;
@@ -56,11 +61,13 @@ section {
 
     ul {
         flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1%;
 
         li {
             // width: calc(100% / 5 - 10px);
             // margin: 0 5px;
-            width: 20%;
+            width: 19%;
             background-color: #d48f38;
         }
     }

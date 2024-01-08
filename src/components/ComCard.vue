@@ -15,7 +15,7 @@ export default {
     <div v-for="CardIesima in item.card_images" class="text-center">
 
         <img :src="CardIesima.image_url" :alt="CardIesima.id">
-        <h5 class="text-white">
+        <h5 class="text-white py-3">
             {{ item.name }}
         </h5>
         {{ item.archetype }}
