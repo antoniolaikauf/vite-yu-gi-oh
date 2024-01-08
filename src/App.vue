@@ -23,8 +23,7 @@ export default {
       Axios.get(store.richiestaApi)
         .then((risposta => {
           store.ArrayCards = risposta.data.data
-          console.log(risposta.data.data);
-          console.log(risposta.data.data[1].card_images);
+          // console.log(risposta.data.data);
         }))
     }
   },

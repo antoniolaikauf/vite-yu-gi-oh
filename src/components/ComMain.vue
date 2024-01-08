@@ -32,7 +32,7 @@ export default {
                 </div>
                 <div class="col-12 p-4 bg-white mt-2">
                         <div class="quantitacard p-2">
-                            found 20 card
+                            found {{ store.ArrayCards.length }}
                         </div>
                         <ul class="d-flex p-0">
                             <li v-for="(card, i) in store.ArrayCards " class="mb-4 pb-4">
