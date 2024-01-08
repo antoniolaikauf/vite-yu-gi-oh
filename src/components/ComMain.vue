@@ -20,8 +20,6 @@ export default {
 </script>
 
 <template>
-    ciao
-
     <ComCard />
 </template>
 

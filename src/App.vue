@@ -5,6 +5,8 @@ import ComMain from './components/ComMain.vue'
 
 import { store } from './store';
 
+import { Axios } from 'axios';
+
 export default {
   components: {
     ComHeader,
