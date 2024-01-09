@@ -3,15 +3,18 @@
 import ComHeader from './components/ComHeader.vue'
 // importo componente main
 import ComMain from './components/ComMain.vue'
+
+import ricercatipocarta from './components/ComRicerca.vue'
 // importo componente store con dentro dati 
 import { store } from './store';
 // importo componente axios per fare richiesta 
-import  Axios  from 'axios';
+import Axios from 'axios';
 
 export default {
   components: {
     ComHeader,
-    ComMain
+    ComMain,
+    ricercatipocarta
   },
 
   data() {
@@ -21,37 +24,56 @@ export default {
   },
   methods: {
     RichiestaApiCards() {
-      Axios.get(store.richiestaApi)
+      let urlAPI = store.richiestaApi
+      if (store.TipoOption !== "") {
+        // urlAPI += `&${archetype}=${store.TipoOption}`
+        urlAPI += `&${store.nameParam}=${store.TipoOption}`
+        console.log(store.TipoOption);
+      }
+
+      Axios.get(urlAPI)
         .then((risposta => {
           store.ArrayCards = risposta.data.data
           console.log(risposta.data.data);
         }))
         // controllo se ci sono dei errori
-        .catch((err)=>{
+        .catch((err) => {
           console.log(err);
         })
     },
-    RichiestaApiOption(){
+    RichiestaApiOption() {
       Axios.get(store.optionApi)
-      .then((risposta)=>{
-        // console.log(risposta.data);
-        store.ArrrayOption=risposta.data
-      })
-    }
+        .then((risposta) => {
+          // console.log(risposta.data);
+          store.ArrrayOption = risposta.data
+        })
+    },
   },
   created() {
     this.RichiestaApiCards()
     this.RichiestaApiOption()
-  }
+  },
+
 }
 </script>
 
 <template>
   <ComHeader />
 
-  <ComMain />
+  <main>
+    <div class="container">
+      <div class="row">
+        <ricercatipocarta @sceltatipo="RichiestaApiCards" />
+        <ComMain />
+      </div>
+    </div>
+  </main>
 </template>
 
 <style lang="scss">
 @use './style/general.scss';
+
+main {
+  background-color: #d48f38;
+}
 </style>

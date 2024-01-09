@@ -8,5 +8,9 @@ export const store = reactive({
 
     optionApi:"https://db.ygoprodeck.com/api/v7/archetypes.php",
 
-    ArrrayOption:[]
+    ArrrayOption:[],
+
+    TipoOption:"",
+
+    nameParam:"archetype"
 })
