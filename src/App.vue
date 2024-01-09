@@ -26,6 +26,10 @@ export default {
           store.ArrayCards = risposta.data.data
           // console.log(risposta.data.data);
         }))
+        // controllo se ci sono dei errori
+        .catch((err)=>{
+          console.log(err);
+        })
     }
   },
   created() {
