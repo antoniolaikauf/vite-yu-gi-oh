@@ -35,6 +35,7 @@ export default {
         .then((risposta => {
           store.ArrayCards = risposta.data.data
           // console.log(store.ArrayCards);
+          // controllo se c'è dentro il tipo di archetype che cerca l'utente 
           for (let i = 0; i < store.ArrayCards.length; i++) {
             if (store.ArrayCards[i].archetype !== store.TipoOption && store.TipoOption !== "") {
               store.ArrayCards = []
