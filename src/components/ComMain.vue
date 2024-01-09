@@ -29,7 +29,9 @@ export default {
                     <!-- selezione rarità  -->
                     <select name="" id="" class="m-2">
                         <option value=""></option>
-                        <option value="alien">alien</option>
+                        <option value="" v-for="(option, i) in store.ArrrayOption" :key="i">
+                            {{ option.archetype_name }}
+                        </option>
                     </select>
                 </div>
                 <div class="col-12 p-4 bg-white mt-2">

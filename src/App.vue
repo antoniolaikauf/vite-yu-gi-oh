@@ -20,20 +20,28 @@ export default {
     }
   },
   methods: {
-    RichiestaApi() {
+    RichiestaApiCards() {
       Axios.get(store.richiestaApi)
         .then((risposta => {
           store.ArrayCards = risposta.data.data
-          // console.log(risposta.data.data);
+          console.log(risposta.data.data);
         }))
         // controllo se ci sono dei errori
         .catch((err)=>{
           console.log(err);
         })
+    },
+    RichiestaApiOption(){
+      Axios.get(store.optionApi)
+      .then((risposta)=>{
+        // console.log(risposta.data);
+        store.ArrrayOption=risposta.data
+      })
     }
   },
   created() {
-    this.RichiestaApi()
+    this.RichiestaApiCards()
+    this.RichiestaApiOption()
   }
 }
 </script>

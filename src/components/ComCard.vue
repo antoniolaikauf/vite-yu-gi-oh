@@ -19,7 +19,7 @@ export default {
             {{ item.name }}
         </h5>
         <!-- rarità cartaiesima  -->
-        {{ item.race }}
+        {{ item.archetype }}
     </div>
 </template>
 
