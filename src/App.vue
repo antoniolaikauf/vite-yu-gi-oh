@@ -40,6 +40,7 @@ export default {
         .catch((err) => {
           console.log(err);
         })
+
     },
     RichiestaApiOption() {
       Axios.get(store.optionApi)

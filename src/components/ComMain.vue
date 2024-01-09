@@ -16,6 +16,11 @@ export default {
             store
         }
     },
+    computed:{
+       risultatoRicerca (){
+        return  store.ArrayCards.length
+       }
+    }
 }
 
 </script>
@@ -26,7 +31,9 @@ export default {
             <div class="row">
                 <div class="col-12 p-4 bg-white mt-2">
                     <div class="quantitacard p-2">
-                        found {{ store.ArrayCards.length }}
+                        <!-- found {{ store.ArrayCards.length }} -->
+                        <div v-if="risultatoRicerca > 0"> found {{ risultatoRicerca }}</div>
+                        <div v-else> non c'è nessuno risutato </div>
                     </div>
                     <!-- lista di oggetti dentro all'array  -->
                     <ul class="d-flex p-0">
