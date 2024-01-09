@@ -1,7 +1,7 @@
 <script >
 export default {
     componente: "ComCard",
-// nome array con dentro dati 
+    // nome array con dentro dati 
     props: {
         item: Object
     }
@@ -11,9 +11,8 @@ export default {
 
 <template>
     <!-- ciclo dentro all array di oggetti per prendere immagine della card   -->
-    <div v-for="CardIesima in item.card_images" class="text-center">
-
-        <img :src="CardIesima.image_url" :alt="item.id">
+    <div class="text-center">
+        <img :src="item.card_images[0].image_url" :alt="item.id">
         <!-- nome cartaiesima -->
         <h5 class="text-white py-3">
             {{ item.name }}
