@@ -54,18 +54,11 @@ export default {
           store.ArrrayOption = risposta.data
         })
     },
-    // controlloRicerca() {
-
-    // }
   },
   created() {
     this.RichiestaApiCards()
     this.RichiestaApiOption()
   },
-  // computed: {
-
-  // }
-
 }
 </script>
 
