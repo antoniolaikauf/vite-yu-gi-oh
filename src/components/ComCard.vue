@@ -16,6 +16,7 @@ export default {
 </script>
 
 <template>
+    
     <!-- ciclo dentro all array di oggetti per prendere immagine della card   -->
     <div class="text-center" >
         <img :src="item.card_images[0].image_url" :alt="item.id">
