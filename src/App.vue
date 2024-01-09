@@ -28,19 +28,23 @@ export default {
       if (store.TipoOption !== "") {
         // urlAPI += `&${archetype}=${store.TipoOption}`
         urlAPI += `&${store.nameParam}=${store.TipoOption}`
-        console.log(store.TipoOption);
+        // console.log(store.TipoOption);
       }
 
       Axios.get(urlAPI)
         .then((risposta => {
           store.ArrayCards = risposta.data.data
-          console.log(risposta.data.data);
+          // console.log(store.ArrayCards);
+          for (let i = 0; i < store.ArrayCards.length; i++) {
+            if (store.ArrayCards[i].archetype !== store.TipoOption && store.TipoOption !== "") {
+              store.ArrayCards = []
+            }
+          }
         }))
         // controllo se ci sono dei errori
         .catch((err) => {
           console.log(err);
         })
-
     },
     RichiestaApiOption() {
       Axios.get(store.optionApi)
@@ -49,11 +53,17 @@ export default {
           store.ArrrayOption = risposta.data
         })
     },
+    // controlloRicerca() {
+
+    // }
   },
   created() {
     this.RichiestaApiCards()
     this.RichiestaApiOption()
   },
+  // computed: {
+
+  // }
 
 }
 </script>
