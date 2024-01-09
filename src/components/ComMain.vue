@@ -39,7 +39,6 @@ export default {
                     <ul class="d-flex p-0">
                         <li v-for="(card, i) in store.ArrayCards " class="mb-4 pb-4">
                             <ComCard :item="card" />
-                            <!-- && store.TipoOption !== '' -->
                         </li>
                     </ul>
                 </div>
