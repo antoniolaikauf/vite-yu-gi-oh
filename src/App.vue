@@ -54,6 +54,9 @@ export default {
           // console.log(risposta.data);
           store.ArrrayOption = risposta.data
         })
+        .catch((err) => {
+          console.log(err);
+        })
     },
   },
   created() {

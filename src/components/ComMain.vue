@@ -41,7 +41,7 @@ export default {
                             <!-- siccome si svuota l'array non farebbe vedere neanche n messaggio al suo interno essendo che stai facendo un ciclo dentro a un array vuoto  -->
                             <div
                                 v-if="card.archetype !== store.TipoOption && store.TipoOption !== '' ? store.ArrayCards = [] : ''">
-                               
+
                             </div>
                             <ComCard :item="card" v-else />
                         </li>
